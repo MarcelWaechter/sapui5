@@ -640,10 +640,9 @@ Property has no meaning in the current entity state and will show up in disabled
 
 ## Editability of the Field
 
-There are different ways in which a field can be marked as editable:
+There are different ways to control the editable state of a field:
 
 1.  `Core.Computed`
-
 2.  `Core.Immutable`
 3.  `Common.FieldControl`
 
@@ -651,7 +650,7 @@ While the first two options are only used with the static values `true` and `fal
 
 If a property is annotated with `Core.Computed true`, it is always displayed in a non-editable way.
 
-`Core.Immutable` has the same result in edit mode, but in create mode the property is editable.
+If a property is annotated with `Core.Immutable`, it can be only filled out during creation of a new draft. If the user creates a new instance, a dialog appears that asks for the value. After creating the new draft, the field is always displayed in a non-editable way. If you want a field to be only editable in drafts for new objects but not in drafts for existing objects you can use `Common.FieldControl` by referring to a property.
 
 `Common.FieldControl` is a term using an enumeration with `ReadOnly` as a possible value. You can statically set a property to read-only \(similar to `Core.Computed`\), but you can also refer to a property that uses the enumeration values as possible data values.
 
